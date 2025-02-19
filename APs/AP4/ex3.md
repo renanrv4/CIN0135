@@ -1,0 +1,1 @@
+O exercício 3 tinha o propósito de melhorar a classe Article

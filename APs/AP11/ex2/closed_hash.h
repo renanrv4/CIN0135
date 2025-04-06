@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// Hash Table com política closed hash
 class Hash {
     private:
         vector<string> table;

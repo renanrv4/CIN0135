@@ -8,6 +8,7 @@
 
 using namespace std;
 
+// Hash Table com política open hash
 class Hash {
     private:
         struct Node {

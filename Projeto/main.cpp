@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 	int tests; cin >> tests;
-	cin.sync(); cin.clear(); 
+	cin.sync(); cin.clear(); cin.ignore();
 	expressionInterpreter(tests);
 	return 0;
 }

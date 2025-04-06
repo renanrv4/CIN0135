@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Implementando uma Binary Tree
 class BST {
     private:
         struct BSTNode {

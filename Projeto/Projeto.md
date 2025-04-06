@@ -1,14 +1,15 @@
-### Documentação dos requisitos gerais do Projeto desenvolvido
+### General Project Requirements Documentation
 
-#### Requisitos Gerais
+#### General Requirements
 
-O seu código deve seguir um paradigma de programação orientado a objetos (OO). Em linhas gerais, não devem existir variáveis globais, nem funções (exceto a main), mas somente classes e métodos. Também se deve evitar o uso de friend. Desvios às essas recomendações devem ser documentados e justificados no código.
+Your code must follow the object-oriented programming (OOP) paradigm. In general, there should be no global variables or standalone functions (except for main). Your program should be composed only of classes and methods. The use of friend should also be avoided. Any deviation from these recommendations must be documented and justified in the code.
 
-Estruture o seu código em arquivos .h e .cpp conforme boas práticas. Explore a maior quantidade possível de conceitos de OO suportados em C++, por exemplo, mas não limitado a: classes, métodos, modificadores de acesso (public, private e protected), namespaces, ponteiros para objetos, referências para objetos, construtores, construtores cópia, destrutores, métodos inline, métodos de acesso, passagem por valor, passagem por referência, atributos e métodos estáticos, sobrecarga de operadores (aritméticos, booleanos, de atribuição, etc.) , alocação dinâmica de objetos, herança, sobrescrita de métodos, conversão estática e dinâmica de tipos entre classes, métodos virtuais, classes abstratas, tratamento de exceção e tipos parametrizados (template).
+Structure your code into .h and .cpp files following good practices. Make use of as many OOP concepts supported in C++ as possible, such as (but not limited to):
+classes, methods, access modifiers (public, private, protected), namespaces, object pointers, object references, constructors, copy constructors, destructors, inline methods, getters/setters, pass-by-value, pass-by-reference, static attributes/methods, operator overloading (arithmetic, boolean, assignment, etc.), dynamic memory allocation, inheritance, method overriding, type casting (static and dynamic), virtual methods, abstract classes, exception handling, and templates.
 
-#### Entrada
+#### Input
 
-A entrada consiste de vários casos. A primeira linha contém c (1 ≤ c ≤ 100.000), o número de casos. A seguir, tem-se c casos, um por linha. Cada caso consiste em uma expressão aritmética ou booleana. Todas as expressões serão sintaticamente corretas.
+The input consists of multiple cases. The first line contains c (1 ≤ c ≤ 100,000), the number of cases. Then, c expressions follow, one per line. Each case consists of an arithmetic or boolean expression. All expressions are guaranteed to be syntactically correct.
 
 ```bash
 7
@@ -21,9 +22,9 @@ true || false == false
 true + 3
 ```
 
-#### Formato e Processamento de Expressões
+#### Expression Format and Parsing
 
-O formato de cada expressão segue a especificação dada pela Gramática Livre de Contexto (GLC) abaixo, onde o símbolo inicial é o não-terminal exp. O uso de colchetes [ A ] denota que o símbolo A é opcional. As aspas duplas destacam os terminais da linguagem que estarão sempre delimitados por espaço. O símbolo <literal> representa literais inteiros (e.g., 2, -3, etc.), assim como literais booleanos (i.e., true e false).
+The format of each expression follows the specification of the Context-Free Grammar (CFG) below, where the starting symbol is the non-terminal exp. Brackets [ A ] indicate optional elements. Double quotes are used to highlight the terminals of the language, which are always space-delimited. The symbol <literal> represents both integer literals (e.g., 2, -3) and boolean literals (true, false).
 
 ```bash
 <exp>         ::= <or_exp>
@@ -38,7 +39,7 @@ O formato de cada expressão segue a especificação dada pela Gramática Livre 
 <literal>     ::= integer literals | boolean literals
 ```
 
-O processamento de expressões de acordo com a gramática acima pode ser realizado a partir do algoritmo recursive descent parser. Nesse algoritmo, cria-se uma operação para cada não-terminal, cujo corpo reflete diretamente a regra correspondente na gramática. Por exemplo, veja o pseudocódigo abaixo associado ao processamento dos símbolos `<exp>` e `<or_exp>`.
+Expressions can be parsed using the recursive descent parser algorithm. In this approach, each non-terminal symbol corresponds to a function, whose body reflects the corresponding grammar rule. Here's an example in pseudocode for parsing `<exp>` and `<or_exp>`:
 
 ```bash
 Expression parse_exp() {
@@ -60,9 +61,9 @@ Expression parse_or_exp() {
 }
 ```
 
-#### Saída
+#### Output
 
-Imprima o resultado da avaliação da expressão. Se um erro for encontrado durante a avaliação da expressão, imprima “error” (sem as aspas duplas).
+Print the result of evaluating each expression. If an error occurs during evaluation, print error (without quotation marks).
 
 ```bash
 1
